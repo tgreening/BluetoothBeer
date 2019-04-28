@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Bluetooth Beer App
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <div *ngIf="!connected">
+      <button ion-button full class="submit-button" (click)="listPairedDevices()" *ngIf="!connected">
+        <ion-icon name="refresh"></ion-icon>&nbsp;Refresh Bluetooth Devices
+      </button>
+      <ion-row *ngIf="!connected">
+        <ion-col>
+          <ion-list *ngIf="listToggle">
+            <ion-radio-group [(ngModel)]="pairedDeviceID"> 
+              <ion-item *ngFor="let i of pairedList;let j=index">
+                <ion-label>{{i.name}}</ion-label>
+                <ion-radio value="{{j}}"></ion-radio>
+              </ion-item>
+            </ion-radio-group>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+      <button ion-button full class="submit-button" *ngIf="listToggle" (click)="selectDevice()">
+        <ion-icon name="bluetooth"></ion-icon>&nbsp;Connect Bluetooth Devices
+      </button>
+    </div>
+  <ion-list *ngIf="connected">
+    <h1>Sensor 1 - {{lineChartData1[9]}}</h1>
+  </ion-list>
+  <div #sensor1Graph style="display: none;">
+       <canvas #sensor1Canvas></canvas>
+  </div>
+  <ion-list *ngIf="connected">
+    <h1>Sensor 2 - {{lineChartData2[9]}}</h1>
+  </ion-list>
+  <div #sensor2Graph style="display: none;">
+         <canvas #sensor2Canvas ></canvas>
+  </div>
+     <ion-list *ngIf="connected">
+        <ion-item>
+          <ion-label floating>Type The Data You want to Send</ion-label>
+          <ion-input type="text" name="datasend" [(ngModel)]="dataSend"></ion-input>
+        </ion-item>
+      </ion-list>
+      <button *ngIf="connected" ion-button full class="submit-button" (click)="sendData()">
+        <ion-icon name="send"></ion-icon>&nbsp;Send Data Via Bluetooth
+      </button>
+  
+</ion-content>

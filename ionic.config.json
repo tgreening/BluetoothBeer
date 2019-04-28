@@ -1,0 +1,8 @@
+{
+  "name": "BluetoothBeer",
+  "integrations": {
+    "cordova": {},
+    "capacitor": {}
+  },
+  "type": "angular"
+}

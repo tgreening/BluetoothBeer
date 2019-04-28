@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Bluetooth Beer</string>
+    <string name="title_activity_main">Bluetooth Beer</string>
+    <string name="package_name">com.chosen.bluebeer</string>
+    <string name="fileprovider_authority">com.chosen.bluebeer.fileprovider</string>
+    <string name="custom_url_scheme">com.chosen.bluebeer</string>
+</resources>

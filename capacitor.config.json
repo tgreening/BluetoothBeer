@@ -1,0 +1,6 @@
+{
+  "appId": "com.chosen.bluebeer",
+  "appName": "Bluetooth Beer",
+  "bundledWebRuntime": false,
+  "webDir": "www"
+}
